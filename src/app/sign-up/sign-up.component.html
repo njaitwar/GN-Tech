@@ -1,0 +1,50 @@
+<div class="signup-container">
+  <h2>Sign Up</h2>
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>Name</label>
+      <input formControlName="name" type="text" required />
+      <div *ngIf="signupForm.get('name')?.invalid && signupForm.get('name')?.touched" class="error">
+        Name is required.
+      </div>
+    </div>
+
+    <div>
+      <label>Email</label>
+      <input formControlName="email" type="email" required />
+      <button type="button" (click)="sendEmailOtp()" [disabled]="emailOtpSent || signupForm.get('email')?.invalid">Send OTP</button>
+      <div *ngIf="emailOtpSent">
+        <input formControlName="emailOtp" placeholder="Enter Email OTP" />
+        <button type="button" (click)="verifyEmailOtp()">Verify</button>
+        <span *ngIf="emailOtpVerified" class="success">Verified!</span>
+      </div>
+      <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched" class="error">
+        Valid email is required.
+      </div>
+    </div>
+
+    <div>
+      <label>Mobile</label>
+      <input formControlName="mobile" type="tel" required maxlength="10" />
+      <button type="button" (click)="sendMobileOtp()" [disabled]="mobileOtpSent || signupForm.get('mobile')?.invalid">Send OTP</button>
+      <div *ngIf="mobileOtpSent">
+        <input formControlName="mobileOtp" placeholder="Enter Mobile OTP" />
+        <button type="button" (click)="verifyMobileOtp()">Verify</button>
+        <span *ngIf="mobileOtpVerified" class="success">Verified!</span>
+      </div>
+      <div *ngIf="signupForm.get('mobile')?.invalid && signupForm.get('mobile')?.touched" class="error">
+        Valid mobile number is required.
+      </div>
+    </div>
+
+    <div>
+      <label>Password</label>
+      <input formControlName="password" type="password" required minlength="6" />
+      <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="error">
+        Password must be at least 6 characters.
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="!signupForm.valid || !emailOtpVerified || !mobileOtpVerified">Register</button>
+  </form>
+</div>

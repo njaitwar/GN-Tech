@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
-  imports: [],
+  standalone: true,
+  imports: [RouterModule], // <-- Yeh line add karein
   templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.css'
+  styleUrls: ['./landing-page.component.css']
 })
-export class LandingPageComponent {
-
-}
+export class LandingPageComponent { }
