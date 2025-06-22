@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # GnTech
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
@@ -57,3 +58,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+# GN-Tech
+⭐ Official website of **GN Tech IT Company. ⭐ Built with React for a dynamic frontend and Java backend for robust scalability. ⭐ Showcasing services, portfolio, and team with a modern, responsive design. ⭐ Optimized for performance, SEO, and user engagement. Contributions welcome!
+>>>>>>> 03ab8e9506c9f3769e943c1575a629069c8757d8
